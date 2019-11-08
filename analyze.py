@@ -16,10 +16,10 @@ def getSize(filename):
 def human_readable_size(size, decimal_places=3):
 	if size == 'NaN':
 		return 'NaN'
-	for unit in ['byte','KB','MB','GB','TB','PB','EB']:
-		if size < 1000.0:
+	for unit in ['byte','KiB','MiB','GiB','TiB','PiB','EiB']:
+		if size < 1024.0:
 			break
-		size /= 1000.0
+		size /= 1024.0
 	return f"{size:.{decimal_places}f} {unit}"
 
 def avg(lst):
